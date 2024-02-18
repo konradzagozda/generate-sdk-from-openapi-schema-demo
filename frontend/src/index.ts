@@ -1,6 +1,6 @@
 import { PostsService } from "./client";
 
-const response = await PostsService.createPostPostsPost({
+const response = await PostsService.createPost({
   requestBody: { content: "this is a new post!", title: "new post" },
 });
 
