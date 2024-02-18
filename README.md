@@ -37,3 +37,9 @@ Documentation is visible at:
 3. `npm run fetch-schema`
 4. `npm run pre-process-schema`
 5. `npm run generate-client`
+
+## Frontend App Installation
+
+1. `cd frontend/app`
+2. `npm install`
+3. `npm run dev`
