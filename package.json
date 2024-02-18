@@ -1,0 +1,16 @@
+{
+  "name": "generate-sdk-from-openapi",
+  "version": "1.0.0",
+  "description": "This demo is inspired by: <https://fastapi.tiangolo.com/advanced/generate-clients/>",
+  "main": "index.js",
+  "scripts": {
+    "fetch-schema": "curl http://localhost:8000/openapi.json --output openapi.json",
+    "generate-client": "openapi --input openapi.json --output ./frontend/src/client --client fetch --useOptions --useUnionTypes"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "openapi-typescript-codegen": "^0.27.0"
+  }
+}
