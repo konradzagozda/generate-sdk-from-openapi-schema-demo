@@ -6,7 +6,7 @@
   "scripts": {
     "fetch-schema": "curl http://localhost:8000/openapi.json --output openapi.json",
     "pre-process-schema": "./pre_process_schema.py",
-    "generate-client": "openapi --input openapi.json --output ./frontend/src/client --client fetch --useOptions --useUnionTypes"
+    "generate-client": "openapi --input openapi.json --output ./frontend/client --client fetch --useOptions --useUnionTypes"
   },
   "keywords": [],
   "author": "",

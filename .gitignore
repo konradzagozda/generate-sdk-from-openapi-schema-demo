@@ -2,4 +2,4 @@ __pycache__
 .mypy_cache
 node_modules
 openapi.json
-frontend/src/client
+frontend/client
