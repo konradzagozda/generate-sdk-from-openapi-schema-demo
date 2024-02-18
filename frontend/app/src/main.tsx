@@ -1,14 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
+import { createRoot } from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import PostCreate from "./pages/PostCreate";
+import PostList from "./pages/PostList";
 
-import { OpenAPI } from "./client";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PostList />,
+  },
+  {
+    path: "create-post",
+    element: <PostCreate />,
+  },
+]);
 
-OpenAPI.BASE = "http://127.0.0.1:8000/";
+const rootElement = document.getElementById("root");
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+if (rootElement) {
+  createRoot(rootElement).render(<RouterProvider router={router} />);
+} else {
+  console.error("Failed to find the root element");
+}
