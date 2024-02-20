@@ -1,11 +1,11 @@
 # Generate SDK client from openapi.json demo
 
-Generating SDK clients from openapi.json has the following benefits:
+Generating SDK clients from openapi.json have following benefits:
 
 - for each endpoint there is a method generated
 - autocompletion and types for all generated methods and their responses
 - necessary code duplication is done via automation
-- incompatibilities detection across your distributed system
+- incompatibilities early detection across your distributed system
 
 This demo is inspired by: <https://fastapi.tiangolo.com/advanced/generate-clients/>
 
