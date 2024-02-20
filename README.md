@@ -4,7 +4,7 @@ Generating SDK clients from openapi.json has the following benefits:
 
 - for each endpoint there is a method generated
 - autocompletion and types for all generated methods and their responses
-- detection of incompatibilities between components
+- reduced code duplication and incompatibilities detection across your distributed system
 
 This demo is inspired by: <https://fastapi.tiangolo.com/advanced/generate-clients/>
 
@@ -12,7 +12,13 @@ This demo is inspired by: <https://fastapi.tiangolo.com/advanced/generate-client
 
 - example backend application written in FastAPI
 - script with steps for generating SDK client
-- example usage in typescript react-redux app
+- example usage of SDK in typescript-node service
+
+## Easy Setup
+
+```sh
+./start-demo.sh
+```
 
 ## Backend App Installation
 

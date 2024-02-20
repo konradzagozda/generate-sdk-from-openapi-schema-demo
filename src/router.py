@@ -4,17 +4,17 @@ from fastapi import APIRouter, HTTPException, status
 
 from .data import posts
 from .helpers import find_index_post, find_post
-from .models import Post
+from .models import Post, PostGet
 
 router = APIRouter(prefix="/posts")
 
 
-@router.get("/", response_model=list[Post])
+@router.get("/", response_model=list[PostGet])
 def get_all_posts():
     return posts
 
 
-@router.post("/", response_model=Post, status_code=status.HTTP_201_CREATED)
+@router.post("/", response_model=PostGet, status_code=status.HTTP_201_CREATED)
 def create_post(post: Post):
     post_dict = post.dict()
     post_dict["id"] = randrange(0, 1000000)
@@ -22,13 +22,13 @@ def create_post(post: Post):
     return post_dict
 
 
-@router.get("/latest", response_model=Post)
+@router.get("/latest", response_model=PostGet)
 def get_latest_post():
     post = posts[-1]
     return post
 
 
-@router.get("/{id}", response_model=Post)
+@router.get("/{id}", response_model=PostGet)
 def get_post_by_id(id: int):
     post = find_post(id)
     if not post:
@@ -50,7 +50,7 @@ def delete_post(id: int):
     return True
 
 
-@router.put("/{id}", response_model=Post)
+@router.put("/{id}", response_model=PostGet)
 def update_post(id: int, post: Post):
     indx = find_index_post(id)
     if indx is None:
