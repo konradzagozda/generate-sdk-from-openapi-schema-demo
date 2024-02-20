@@ -4,7 +4,8 @@ Generating SDK clients from openapi.json has the following benefits:
 
 - for each endpoint there is a method generated
 - autocompletion and types for all generated methods and their responses
-- reduced code duplication and incompatibilities detection across your distributed system
+- necessary code duplication is done via automation
+- incompatibilities detection across your distributed system
 
 This demo is inspired by: <https://fastapi.tiangolo.com/advanced/generate-clients/>
 
@@ -20,12 +21,14 @@ This demo is inspired by: <https://fastapi.tiangolo.com/advanced/generate-client
 ./start-demo.sh
 ```
 
+Check out backend server logs in `nohup.backend` file
+Check out node service logs in `nohup.node` file
+
 ## Backend App Installation
 
 ```sh
 poetry install
-poetry shell
-uvicorn src.main:app --reload
+poetry run uvicorn src.main:app --reload
 ```
 
 ### OpenAPI
@@ -44,8 +47,8 @@ Documentation is visible at:
 4. `npm run pre-process-schema`
 5. `npm run generate-client`
 
-## Frontend App Installation
+## Node Service Installation
 
-1. `cd frontend/app`
+1. `cd node-service`
 2. `npm install`
-3. `npm run dev`
+3. `npm run start:dev`

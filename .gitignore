@@ -3,3 +3,5 @@ __pycache__
 node_modules
 openapi.json
 frontend/app/src/client
+nohup.backend
+nohup.node
